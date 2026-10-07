@@ -84,7 +84,8 @@
 	\[ z (X, Y) \]
 	\[\]
 	In short, $\zeta(s) = z = X + Yi$ where,
-	\[ X = \sum\limits_{k=1}^{\infty}x_k = \sum\limits_{k=1}^{\infty}\frac{\cos({c\ln k})}{\sqrt[b]{k}}, \qquad Y = \sum\limits_{k=1}^{\infty}y_k = \sum\limits_{k=1}^{\infty}\frac{-\sin({c\ln k})}{\sqrt[b]{k}} \]
+	\[ X = \sum\limits_{k=1}^{\infty}x_k, \qquad Y = \sum\limits_{k=1}^{\infty}(-y_k) \]
+	\[ x_k = \frac{\cos({c\ln k})}{\sqrt[b]{k}}, \qquad y_k = \frac{\sin({c\ln k})}{\sqrt[b]{k}} \]
 	
 	\[\]
 	
@@ -131,7 +132,7 @@
 	\subsection{Terms revisited}
 	Now that we have established that $X^2+Y^2 = 0$ through analytic continuation, let's observe what happens. The subscripts $(b,c)$ will be used to denote that such terms are being influenced by $s$ where $s=\frac{1}{b}+ci$.
 	\[ \zeta(s) = \zeta(\frac{1}{b}+ci) = X+Yi := X_{(b,c)} + Y_{(b,c)}i \]
-	\[ X_{(b,c)} = \sum\limits_{k=1}^{\infty}x_k = \sum\limits_{k=1}^{\infty}\frac{\cos({c\ln k})}{\sqrt[b]{k}}, \qquad Y_{(b,c)} = \sum\limits_{k=1}^{\infty}y_k = \sum\limits_{k=1}^{\infty}\frac{-\sin({c\ln k})}{\sqrt[b]{k}} \]
+	\[ X_{(b,c)} = \sum\limits_{k=1}^{\infty}x_k = \sum\limits_{k=1}^{\infty}\frac{\cos({c\ln k})}{\sqrt[b]{k}}, \qquad Y_{(b,c)} = \sum\limits_{k=1}^{\infty}(-y_k) = \sum\limits_{k=1}^{\infty}\frac{-\sin({c\ln k})}{\sqrt[b]{k}} \]
 	
 	\subsection{The Cauchy products of X and Y}
 	By definition and given all the conditions, especially $1<b<\infty$, $X_{(b,c)}$ and $Y_{(b,c)}$ diverge and therefore cannot be zero. However, $X^2+Y^2$ converges as it equals zero.
@@ -180,7 +181,7 @@
 	\[\]
 	
 	\[ \begin{array}{c}
-		Y_{(b,c)}^2 = (y_1 + y_2 + y_3 + \dots + y_k)^2 = (y_1^2 + y_2^2 + y_3^2 + \dots + y_k^2) \\
+		Y_{(b,c)}^2 = (-y_1 - y_2 - y_3 - \dots - y_k)^2 = (y_1^2 + y_2^2 + y_3^2 + \dots + y_k^2) \\
 		\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\quad + 2\{(y_1y_2 + y_1y_3 + y_1y_4 + \dots + y_{1}y_{k}) \\ 
 		\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad + (y_2y_3 + y_2y_4 + y_2y_5 + \dots + y_2y_{k}) \\ 
 		\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad + (y_3y_4 + y_3y_5 + y_3y_6 + \dots + y_3y_{k}) \\ 
@@ -242,7 +243,7 @@
 	Then we may rearrange $X_{(b,c)}^2$, $Y_{(b,c)}^2$ and $X_{(b,c)}^2 + Y_{(b,c)}^2$.
 	\[ X^2_{(b,c)} = (x_1^2 + x_2^2 + x_3^2 + \dots + x_k^2) + 2 \alpha_{(b,c)} = \sum\limits_{k=1}^{\infty}x_k^2 + 2 \alpha_{(b,c)} \]
 	
-	\[ Y^2_{(b,c)} = (y_1^2 + y_2^2 + y_3^2 + \dots + y_k^2) + 2 \beta_{(b,c)} = \sum\limits_{k=1}^{\infty}y_k^2 + 2 \beta_{(b,c)} \]
+	\[ Y^2_{(b,c)} = (-y_1^2 - y_2^2 - y_3^2 - \dots - y_k^2) + 2 \beta_{(b,c)} = \sum\limits_{k=1}^{\infty}y_k^2 + 2 \beta_{(b,c)} \]
 	
 	\[ X^2_{(b,c)} + Y^2_{(b,c)} = \sum\limits_{k=1}^{\infty}x_k^2 + 2\alpha_{(b,c)} + \sum\limits_{k=1}^{\infty}y_k^2 + 2\beta_{(b,c)} \]
 	
