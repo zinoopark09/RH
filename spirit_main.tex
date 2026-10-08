@@ -16,40 +16,50 @@
 	\maketitle
 	
 	\begin{abstract}
-		This document aims to show that the real part of a non-trivial zero of the Riemann zeta function is always $\frac12$ by utilising the concepts of Euclidean distance and the Cartesian coordinate system. It could be said that, if the distance between one point and a target point on a 2D plane equals or converges to zero, they occupy the same coordinates. Let $z=X+Yi$ be the output of $\zeta(s)$ where $s=\frac{1}{b} + ci$ is a complex number and a non-trivial zero of said function. Through analytic continuation where $\zeta(s) = \frac{\eta(s)}{D}$ or $D\zeta(s) = \eta(s)$ and $D=1-2^{1-s}=v+wi$ we may transform $z$ into a new term $Z = (vX-wY) + (wX+vY)i$. Instead of the complex plane, $Z$ may be plotted on an XY plane at $(vX-wY, wX+vY)$. Similarly, the target point can be expressed as $\Omega=(p, q)$ where $p, q \in \mathbb{R}$. If the distance between the two points, $Z\Omega$, equals zero after having moved $\Omega$ to the origin $(0,0)$, we may claim that $\zeta(s)$ converges to zero. By rearranging and determining the convergence and/or divergence of the terms and sequences that derive from the distance equation, we see that $\zeta(\frac{2}{b})$ diverges. As $\zeta(1)$ is the only instance where this occurs, we may deduce that $\frac{1}{b}=2$ or $b=2$ or $\Re(s)=\frac{1}{2}$.
+		This document aims to show that the real part of a non-trivial zero of the Riemann zeta function is always $\frac12$ by utilising the concepts of Euclidean distance and the Cartesian coordinate system. It could be said that, if the distance between one point and a target point on a 2D plane equals or converges to zero, they occupy the same coordinates. Let $z=X+Yi$ be the output of the Dirichlet eta function, $\eta(s)$, where $s=\frac{1}{b} + ci$ is a complex number and a non-trivial zero of said function. Through analytic continuation where $\zeta(s) = \frac{\eta(s)}{D}$ or $D\zeta(s) = \eta(s)$ and $D=1-2^{1-s}=v+wi$ we may transform $z$ into a new term $Z = \frac{vX+wY}{v^2+w^2} + \frac{-wX+vY}{v^2+w^2}i$. Instead of the complex plane, $Z$ may be plotted on an XY plane at $(\frac{vX+wY}{v^2+w^2}, \frac{-wX+vY}{v^2+w^2})$. Similarly, the target point can be expressed as $\Omega(p, q)$ where $p, q \in \mathbb{R}$. If the distance between these two points, $Z\Omega$, equals zero after having moved $\Omega$ to the origin $(0,0)$, we may claim that $\zeta(s)$ converges to zero. By rearranging and determining the convergence and/or divergence of the terms and series that derive from the distance equation, we see that $\zeta(\frac{2}{b})$ diverges. As $\zeta(1)$ is the only instance where this occurs, we may deduce that $\frac{1}{b}=2$ or $b=2$ or $\Re(s)=\frac{1}{2}$.
 	\end{abstract}
 	
 	\section{Introduction}
-	Given any $s$ where $s \in \mathbb{C}$ and $0<\Re(s)<1$, the series yielded by the Riemann zeta function does not converge unless via analytic continuation. This means that if $\zeta(s) = z = X+Yi$, $X$ and $Y$ do not have fixed numerical values. In such a case, whether or not $z(X,Y)$ and another point $\Omega(p,q)$, where $p,q \in \mathbb{R}$, occupy the same coordinates on an XY plane cannot be determined by simply equating one to the other. The equation when doing so produces a false statement as neither $X-p$ nor $Y-q$ cannot equal zero, let alone any other real number.
+	Given any $s$ where $s \in \mathbb{C}$ and $0<\Re(s)<1$, the series yielded by the Riemann zeta function does not converge unless via analytic continuation. By leveraging $\eta(s) = z = X+Yi$, where $X$ and $Y$ do have real values, we may produce $\zeta(s) = \frac{\eta(s)}{1-2^{1-s}}$. Let $Z = \zeta(s)$ and $D = 1-2^{1-s} = v + wi$ then $Z$ may be expressed in terms of $X$ and $Y$.
 	
-	\[ z(X,Y) = \Omega(p,q) \quad \Rightarrow \quad X=p, Y=q \]
-	\[ X-p \neq 0, Y -q \neq 0 \qquad\qquad (\because \, X = \text{DNE}, \quad Y = \text{DNE}) \]
-	\[ \therefore z(X,Y) \neq \Omega(p,q) \]
+	\[ Z = \zeta(s) = \frac{\eta(s)}{D}, \qquad D = 1-2^{1-s} = v + wi, \quad \bar{D} = v - wi \]
+	\[ Z = \frac{\eta(s)}{D} = \frac{\eta(s) \cdot \bar{D}}{D \cdot \bar{D}} = \frac{(X+Yi)(v-wi)}{(v+wi)(v-wi)} \]
+	\[ = \frac{vX-wXi+vYi-wYi^2}{v^2+w^2} = \frac{(vX+wY)+(-wX+vY)i}{v^2+w^2} \]
+	\[ = \frac{vX+wY}{v^2+w^2} + \frac{-wX+vY}{v^2+w^2}i \]
+	\[ \text{or} \quad Z(\frac{vX+wY}{v^2+w^2}, \quad \frac{-wX+vY}{v^2+w^2}) \]
 	
+	In such a case, whether or not $Z(\frac{vX+wY}{v^2+w^2},\frac{-wX+vY}{v^2+w^2})$ and the other point $\Omega(p,q)$, where $p,q \in \mathbb{R}$, occupy the same coordinates on an XY plane should not be determined by simply equating one to the other if we were to search for more intriguing behaviours. The equation when doing so may produce a true statement but leaves no further information to be deduced.
+	
+	\[ Z(\frac{vX+wY}{v^2+w^2},\frac{-wX+vY}{v^2+w^2}) = \Omega(p,q) \quad \Rightarrow \quad \frac{vX+wY}{v^2+w^2}=p, \quad \frac{-wX+vY}{v^2+w^2}=q \]
+		
 	There is another method of checking for overlap in coordinates. It is to calculate the Euclidean distance between the two given points and compare it to zero.
 	
-	\[ z\Omega = \sqrt{(X-p)^2 - (Y-q)^2} = 0 \]
+	\[ Z\Omega = \sqrt{(\frac{vX+wY}{v^2+w^2}-p)^2 - (\frac{-wX+vY}{v^2+w^2}-q)^2} = 0 \]
 	
-	The terms before expansion is the reason we simply equate one pair of coordinates to another. If all terms involved were real numbers, the squares of differences, namely $(X-p)^2$ and $(Y-q)^2$, would be equal to or above zero. The only way the result becomes zero is when both of the differences are zero.
+	The terms before expansion is the reason we simply equate one pair of coordinates to another. If all terms involved were real numbers, the squares of differences, namely $(\frac{vX+wY}{v^2+w^2}-p)^2$ and $(\frac{-wX+vY}{v^2+w^2}-q)^2$, would be equal to or above zero. The only way the result becomes zero is when both of the differences are zero.
 	
-	\[ X-p=0 \Rightarrow X=p  \]
-	\[ Y-q=0 \Rightarrow Y=q  \]
+	\[ \frac{vX+wY}{v^2+w^2}-p=0 \quad \Rightarrow \quad \frac{vX+wY}{v^2+w^2} = p  \]
+	\[\]
+	\[ \frac{-wX+vY}{v^2+w^2}-q=0 \quad \Rightarrow \quad \frac{-wX+vY}{v^2+w^2} = q  \]
+	\[\]
+	However, in order to continue with the concept of distance equalling zero, let us expand $Z\Omega$.
+	\[ Z\Omega = \sqrt{(\frac{vX+wY}{v^2+w^2}-p)^2 - (\frac{-wX+vY}{v^2+w^2}-q)^2} = 0 \]
+	\[\]
+	\[ = \sqrt{  (\frac{vX+wY}{v^2+w^2})^2 + p^2 -2p(\frac{vX+wY}{v^2+w^2}) + (\frac{-wX+vY}{v^2+w^2})^2 + q^2 -2q(\frac{-wX+vY}{v^2+w^2}) } \]
 	
-	However, as we have already established that this is not the case, we must consider other possibilities. Even when some series diverge on their own, when combined through addition or subtraction, they may converge. Moreover, the Cauchy products of divergent series when multiplied by their own respective selves also may converge. For this, we expand the terms.
+	\[\]
+		
+	Fortunately, studying the non-trivial zeros of the Riemann zeta function means that the target point is the origin point, $(0, 0)$. Therefore, the easiest option that anyone would be tempted to do would be to let $p=0$ and $q=0$.
 	
-	\[ z\Omega = \sqrt{X^2 - 2pX + p^2 + Y^2 - 2qY + q^2} = 0 \]
+	\[ \text{If} \quad p=0, \quad q=0 \qquad \Rightarrow \qquad \Omega(0,0) \]
 	
-	One glaring issue in this expanded version is the divergence of $X$ and $Y$. We may suppose that the two Cauchy products, $X^2$ and $Y^2$, converge separately on their own or as a group $X^2+Y^2$, but we still cannot guarantee that $-2pX-2qY$ converge by cancelling each other out. The easiest option that anyone would be tempted to do would be to let $p=0$ and $q=0$.
+	\[ Z\Omega = \sqrt{  (\frac{vX{+}wY}{v^2{+}w^2})^2 {+} 0^2 {-} 2 {\cdot} 0 (\frac{vX{+}wY}{v^2{+}w^2}) {+} (\frac{-wX{+}vY}{v^2{+}w^2})^2 {+} 0^2 {-} 2 {\cdot} 0 (\frac{-wX{+}vY}{v^2{+}w^2}) } \]
+	\[\]
+	\[ = \sqrt{(\frac{vX{+}wY}{v^2{+}w^2})^2 + (\frac{-wX{+}vY}{v^2{+}w^2})^2} = 0 \]
 	
-	\[ \text{If} \quad p=0, q=0 \qquad \Rightarrow \qquad \Omega(0,0) \]
+	This implies that we are making $\Omega$ origin $O(0,0)$. Subsequently, this means that point $Z$ equals or converges to the origin.
 	
-	\[ z\Omega = \sqrt{X^2 - 2 \cdot 0 \cdot X + 0^2 + Y^2 - 2 \cdot 0 \cdot Y + 0^2} = 0 \]
-	
-	\[ = \sqrt{X^2 + Y^2} = 0 \]
-	
-	This implies that we are making $\Omega$ origin $O(0,0)$. Subsequently, this means that $z(X,Y)$ equals or converges to the origin, a paradox when considering what was initially stated for X and Y. This is where analytic continuation steps in when the concept discussed in this paper is applied to the Riemann zeta function and its non-trivial zeros.
-	
-	In the sections that follow, by computing the Euclidean distance in a 2D Cartesian coordinate system, we will observe the characteristics of resulting terms. This will help us understand values from $\zeta(s)$, where $s = \frac{1}{b} + ci$, especially $\zeta(\frac{2}{b})$.
+	In the sections that follow, by computing the Euclidean distance in a 2D Cartesian coordinate system, we will observe the characteristics of resulting terms. This will help us understand certain values from $\zeta(s)$ and specifically, $\zeta(\frac{2}{b})$.
 	\[\]
 	
 	\section{Definition}
@@ -65,17 +75,17 @@
 	Each term of the series from $\zeta(s)$ can be expressed in $b$ and $c$.
 	\[ \Bigl( \frac{1}{k} \Bigl)^s = \Bigl( \frac{1}{k} \Bigl)^{\frac{1}{b} + ci} = \frac{\cos({c\ln a})}{\sqrt[b]{a}} + \frac{-\sin({c\ln a})}{\sqrt[b]{a}} i \]
 	
-	Then, $\zeta(s)$ can be laid out in a series of pairs consisting of one cosine value and one sine value. 
+	Then, $\eta(s)$ can be laid out in a series of pairs consisting of one cosine value and one sine value. 
 		
-	\[ \zeta(s) \qquad = \qquad \frac{1}{1^s} \qquad \Big|  \qquad \frac{\cos({c\ln 1})}{\sqrt[b]{1}} \qquad \frac{-\sin({c\ln 1})}{\sqrt[b]{1}} \quad i  \]
+	\[ \eta(s) \qquad = \qquad +\frac{1}{1^s} \qquad \Big|\Big|  \qquad +\frac{\cos({c\ln 1})}{\sqrt[b]{1}} \qquad +\frac{-\sin({c\ln 1})}{\sqrt[b]{1}} \quad i  \]
 	
-	\[ \quad \qquad  \qquad \qquad \frac{1}{2^s} \qquad \Big|  \qquad \frac{\cos({c\ln 2})}{\sqrt[b]{2}} \qquad \frac{-\sin({c\ln 2})}{\sqrt[b]{2}} \quad i  \]
+	\[ \quad \qquad  \qquad \qquad -\frac{1}{2^s} \qquad \Big|\Big|  \qquad -\frac{\cos({c\ln 2})}{\sqrt[b]{2}} \qquad -\frac{-\sin({c\ln 2})}{\sqrt[b]{2}} \quad i  \]
 	
-	\[ \quad \qquad  \qquad \qquad \frac{1}{3^s} \qquad \Big|  \qquad \frac{\cos({c\ln 3})}{\sqrt[b]{3}} \qquad \frac{-\sin({c\ln 3})}{\sqrt[b]{3}} \quad i  \]
+	\[ \quad \qquad  \qquad \qquad +\frac{1}{3^s} \qquad \Big|\Big|  \qquad +\frac{\cos({c\ln 3})}{\sqrt[b]{3}} \qquad +\frac{-\sin({c\ln 3})}{\sqrt[b]{3}} \quad i  \]
 	
 	\[ \vdots \]
 	
-	\[ \qquad \qquad \quad + \quad \frac{1}{k^s} \qquad \Big|  \qquad \frac{\cos({c\ln k})}{\sqrt[b]{k}} \qquad \frac{-\sin({c\ln k})}{\sqrt[b]{k}} \quad i  \]
+	\[ \qquad  \quad +\frac{(-1)^{k-1}}{k^s} \qquad \Big|\Big|  \qquad \frac{\cos({c\ln k}){\cdot(-1)^{k-1}}}{\sqrt[b]{k}} \qquad \frac{{-}\sin({c\ln k}){\cdot({-}1)^{k-1}}}{\sqrt[b]{k}} \quad i  \]
 	
 	\[\quad \rule{12 cm}{.8pt} \quad \]
 	\[ \qquad \qquad \qquad z \qquad\qquad =  \qquad\qquad X \qquad + \qquad Y \quad i \qquad\qquad \]
@@ -83,63 +93,63 @@
 	\[ \text{or} \]
 	\[ z (X, Y) \]
 	\[\]
-	In short, $\zeta(s) = z = X + Yi$ where,
-	\[ X = \sum\limits_{k=1}^{\infty}x_k, \qquad Y = \sum\limits_{k=1}^{\infty}(-y_k) \]
-	\[ x_k = \frac{\cos({c\ln k})}{\sqrt[b]{k}}, \qquad y_k = \frac{\sin({c\ln k})}{\sqrt[b]{k}} \]
+	In short, $\eta(s) = z = X + Yi$ where,
+	\[ X = \sum\limits_{k=1}^{\infty}x_k, \qquad Y = \sum\limits_{k=1}^{\infty}y_k \]
+	\[ x_k = \frac{\cos({c\ln k}){\cdot({-}1)^{k-1}}}{\sqrt[b]{k}}, \qquad y_k = \frac{-\sin({c\ln k}){\cdot({-}1)^{k-1}}}{\sqrt[b]{k}} \]
 	
 	\[\]
 	
 	\section{Calculating the Euclidean distance}
 	\subsection{Applying analytic continuation}
-	Since $\zeta(s) = \frac{\eta(s)}{1-2^{1-s}}$, let $D = 1-2^{1-s}=v+wi$ and multiply it by $\zeta(s)$ in order to obtain $\eta(s)$ in terms of $X$ and $Y$. Then let $\eta(s) = Z$, the newly transformed complex value.
-	\[ D\zeta(s) = \eta(s) = (v+wi) \times (X+Yi) = vX + vYi + wXi - wY  \]
-	\[ = (vX - wY) + (wX + vY)i = \eta(s) = Z \]
-	\[ Z = (vX - wY) + (wX + vY)i \]
+	Since $\zeta(s) = \frac{\eta(s)}{1-2^{1-s}}$, let $D = 1-2^{1-s}=v+wi$ and divide $z$ by $D$ to obtain $\zeta(s)$ in terms of $X$ and $Y$. Then let $Z = \zeta(s)$, the newly transformed complex value.
+	\[ Z = \zeta(s) = \frac{z}{D} = \frac{X+Yi}{v+wi} = \frac{(X+Yi)(v-wi)}{(v+wi)(v-wi)} \]
+	\[ = \frac{vX-wXi+vYi-wYi^2}{v^2+w^2} = \frac{(vX+wY)+(-wX+vY)i}{v^2+w^2} \]
+	\[ = \frac{vX+wY}{v^2+w^2} + \frac{-wX+vY}{v^2+w^2}i \]
 	\[ \text{or} \]
-	\[ Z \Bigl( (vX - wY), (wX + vY) \Bigr) \]
+	\[ \quad Z(\frac{vX+wY}{v^2+w^2}, \quad \frac{-wX+vY}{v^2+w^2}) \]
+	\[\]
+	
 	
 	\subsection{The Euclidean distance}
 	Let the target point $\Omega$ be a point with coordinates $(p,q)$ in a 2D Cartesian coordinate system.
 	\[ \Omega(p, q) \qquad p,q \in \mathbb{R} \]
 
 	The Euclidean distance between $Z$ and $\Omega$ on the given 2D plane will be $Z\Omega$.
-	\[ Z\Omega = \sqrt{\{(vX-wY)-p\}^2 + \{(wX+vY)-q\}^2} \]
+	\[ Z\Omega = \sqrt{(\frac{vX+wY}{v^2+w^2}-p)^2 - (\frac{-wX+vY}{v^2+w^2}-q)^2} \]
 	If the distance is equal to zero, implying that the two points occupy the same coordinates, this can be expanded as follows.
-	\[ Z\Omega = \sqrt{\{(vX-wY)-p\}^2 + \{(wX+vY)-q\}^2} = 0 \]
-	\[ = \sqrt{\{ (vX-wY)^2 + p^2 -2p(vX-wY) \} + \{ (wX+vY)^2 + q^2 + 2q(wX+vY) \}} = 0 \]
+	\[ Z\Omega = \sqrt{(\frac{vX+wY}{v^2+w^2}-p)^2 - (\frac{-wX+vY}{v^2+w^2}-q)^2} = 0 \]
+	\[ = \sqrt{  (\frac{vX{+}wY}{v^2{+}w^2})^2 {+} p^2 {-} 2p(\frac{vX{+}wY}{v^2{+}w^2}) {+} (\frac{{-}wX{+}vY}{v^2{+}w^2})^2 {+} q^2 {-}2q(\frac{{-}wX{+}vY}{v^2{+}w^2}) } = 0 \]
 	We can also imply that $\eta(s)=Z$ equals or converges to zero by moving point $\Omega$ to the origin$(0,0)$ if we let $p=0$ and $q=0$.
-	\[ Z\Omega = \sqrt{\{ (vX-wY)^2 + 0^2 -2 \cdot 0 \cdot (vX-wY) \} + \{ (wX+vY)^2 + 0^2 + 2 \cdot 0 \cdot (wX+vY) \}} \]
-	\[ = \sqrt{(vX-wY)^2 + (wX+vY)^2} = 0 \]
+	\[ Z\Omega = \sqrt{  (\frac{vX{+}wY}{v^2{+}w^2})^2 {+} 0^2 {-} 2 {\cdot} 0 (\frac{vX{+}wY}{v^2{+}w^2}) {+} (\frac{-wX{+}vY}{v^2{+}w^2})^2 {+} 0^2 {-} 2 {\cdot} 0 (\frac{-wX{+}vY}{v^2{+}w^2}) } \]
+	\[ = \sqrt{(\frac{vX{+}wY}{v^2{+}w^2})^2 + (\frac{-wX{+}vY}{v^2{+}w^2})^2} = 0 \]
+	\[\]
+
+	We may square both sides and before continuing.
+	\[ \Bigl(\frac{vX{+}wY}{v^2{+}w^2}\Bigr)^2 + \Bigl(\frac{-wX{+}vY}{v^2{+}w^2}\Bigr)^2 = 0 \]
+	\[ = \frac{v^2X^2 + w^2Y^2 + 2vwXY}{(v^2+w^2)^2} + \frac{w^2X^2 + v^2Y^2 - 2vwXY}{(v^2+w^2)^2} \]
+	\[ = \frac{v^2X^2 + w^2Y^2 + w^2X^2 + v^2Y^2}{(v^2+w^2)^2} \]
+	\[ = \frac{(v^2+w^2)X^2 + (v^2+w^2)Y^2}{(v^2+w^2)^2} \]
+	\[ = \frac{(v^2+w^2)(X^2 + Y^2)}{(v^2+w^2)^2} = 0 \]
 	
-	When analytic continuation was applied and $Z = (vX - wY) + (wX + vY)i$ was established, it is guaranteed that both $vX - wY$ and $wX + vY$ are real numbers. Therefore, it is safe to assumed that $(vX-wY)^2 \geq 0$ and $(wX+vY)^2 \geq 0$, making it possible to square both sides of the latest equation from computing $Z\Omega$.
 	
-	
-	\[ Z\Omega =  \sqrt{(vX-wY)^2 + (wX+vY)^2} = 0 \]
-	\[ \Rightarrow (vX-wY)^2 + (wX+vY)^2 = 0 \]
-	
-	This can be reorganised by expanding and factoring out certain terms.
-	\[ (vX-wY)^2 + (wX+vY)^2 = (v^2X^2 + w^2Y^2 - 2vwXY) + (w^2X^2 + v^2Y^2 + 2vwXY) \]
-	\[ = (v^2 + w^2)X^2 + (v^2 + w^2)Y^2 \]
-	\[ = (v^2 + w^2)(X^2+Y^2) = 0 \]
-	While $v,w \in \mathbb{R}$, $v^2+w^2 \neq 0$ because the fact that $c = \Im(s) \neq 0$ forces $w \neq 0$. Therefore, both sides of the latest equation may be divided by $(v^2 + w^2)$.
-	\[ (v^2 + w^2)(X^2+Y^2) = 0 \qquad \Rightarrow \qquad X^2+Y^2 = 0 \]
-	\[ \because v, w \in \mathbb{R}, \quad v^2 + w^2 > 0 \]
+	While $v,w \in \mathbb{R}$, $v^2+w^2 > 0$ because the fact that $c = \Im(s) \neq 0$ forces $w \neq 0$. Therefore the denominator, $(v^2+w^2)^2 > 0$, and may be multiplied on both sides.
+	\[ = (v^2+w^2)(X^2 + Y^2) = 0 \qquad (\because v, w \in \mathbb{R}, \quad w \neq 0, \quad v^2 + w^2 > 0)  \]
+	In similar fashion, since $(v^2+w^2)>0$, both sides can be divided by it without changing the polarity.
+	\[ \Rightarrow X^2 + Y^2 = 0 \]
 	\[  \]
-	
-	
-	
 	\section{Zeros and series divergence}
 	\subsection{Terms revisited}
 	Now that we have established that $X^2+Y^2 = 0$ through analytic continuation, let's observe what happens. The subscripts $(b,c)$ will be used to denote that such terms are being influenced by $s$ where $s=\frac{1}{b}+ci$.
-	\[ \zeta(s) = \zeta(\frac{1}{b}+ci) = X+Yi := X_{(b,c)} + Y_{(b,c)}i \]
-	\[ X_{(b,c)} = \sum\limits_{k=1}^{\infty}x_k = \sum\limits_{k=1}^{\infty}\frac{\cos({c\ln k})}{\sqrt[b]{k}}, \qquad Y_{(b,c)} = \sum\limits_{k=1}^{\infty}(-y_k) = \sum\limits_{k=1}^{\infty}\frac{-\sin({c\ln k})}{\sqrt[b]{k}} \]
+	\[ \eta(s) = \eta(\frac{1}{b}+ci) = X+Yi := X_{(b,c)} + Y_{(b,c)}i \]
+	\[ X_{(b,c)} = \sum\limits_{k=1}^{\infty}x_k, \qquad Y_{(b,c)} = \sum\limits_{k=1}^{\infty}y_k \]
+	\[ x_k = \frac{\cos({c\ln k}){\cdot({-}1)^{k-1}}}{\sqrt[b]{k}}, \qquad y_k = \frac{-\sin({c\ln k}){\cdot({-}1)^{k-1}}}{\sqrt[b]{k}} \]
+	
+	
 	
 	\subsection{The Cauchy products of X and Y}
-	By definition and given all the conditions, especially $1<b<\infty$, $X_{(b,c)}$ and $Y_{(b,c)}$ diverge and therefore cannot be zero. However, $X^2+Y^2$ converges as it equals zero.
-	\[ X_{(b,c)} \neq 0, \qquad Y_{(b,c)} \neq 0 \qquad\qquad (\because X_{(b,c)}, Y_{(b,c)} = \text{DNE}) \]
-	\[ X_{(b,c)}^2+Y_{(b,c)}^2 = 0 \]
-	
-	Observe the two different Cauchy products, namely $X_{(b,c)}^2$ and $Y_{(b,c)}^2$ while we let $k \to \infty$.
+	By definition, especially $1<b<\infty$, $X_{(b,c)}$ and $Y_{(b,c)}$ converge. However they are conditionally convergent and therefore their self-Cauchy products, namely $X_{(b,c)}^2$ and $Y_{(b,c)}^2$ are not guaranteed for convergence. However, $X^2+Y^2$ converges as it equals zero.
+	\[ X_{(b,c)}, Y_{(b,c)} \in \mathbb{R}, \qquad X_{(b,c)}^2+Y_{(b,c)}^2 = 0 \]
+	The two self-Cauchy products may be closely inspected by expanding it while we let $k \to \infty$.
 	
 	
 	\[ \begin{array}{c}
@@ -152,36 +162,36 @@
 	\end{array} \]
 	\[\]
 	
-	\[ = \Bigl( \frac{\cos({c\ln 1})}{\sqrt[b]{1}} + \frac{\cos({c\ln 2})}{\sqrt[b]{2}} + \frac{\cos({c\ln 3})}{\sqrt[b]{3}} + \dots + \frac{\cos({c\ln k})}{\sqrt[b]{k}} \Bigr)^2 \]
+	\[ = \Bigl( \frac{\cos({c\ln 1})}{\sqrt[b]{1}} - \frac{\cos({c\ln 2})}{\sqrt[b]{2}} + \frac{\cos({c\ln 3})}{\sqrt[b]{3}} - \dots \pm \frac{\cos({c\ln k})}{\sqrt[b]{k}} \Bigr)^2 \]
 	\[\]
 	\[ = \Bigl( \frac{1}{1} \Bigr)^{\frac2b}\cos^2({c \ln 1}) + \Bigl( \frac{1}{2} \Bigr)^{\frac2b}\cos^2({c \ln 2}) + \Bigl( \frac{1}{3} \Bigr)^{\frac2b}\cos^2({c \ln 3}) + \dots + \Bigl( \frac{1}{k} \Bigr)^{\frac2b}\cos^2({c \ln k}) \]
 	\[
 	\begin{aligned}
-		+2\Biggl\{ \Bigl( \frac{1}{1} \cdot \frac{1}{2}& \Bigr)^\frac1b \cos(c \ln1) \cos(c \ln2) + \Bigl( \frac{1}{1} \cdot \frac{1}{3} \Bigr)^\frac1b \cos(c \ln 1) \cos(c \ln 3) \\ 
-		& + \Bigl( \frac{1}{1} \cdot \frac{1}{4} \Bigr)^\frac1b \cos(c \ln 1) \cos(c \ln 4) + \dots + \Bigl( \frac{1}{1} \cdot \frac{1}{k} \Bigr)^\frac1b \cos(c \ln 1) \cos(c \ln k) + \\ 		
+		+2\Biggl\{ -\Bigl( \frac{1}{1} {\cdot} \frac{1}{2}& \Bigr)^\frac1b \cos(c \ln1) \cos(c \ln2) + \Bigl( \frac{1}{1} {\cdot} \frac{1}{3} \Bigr)^\frac1b \cos(c \ln 1) \cos(c \ln 3) \\ 
+		& - \Bigl( \frac{1}{1} {\cdot} \frac{1}{4} \Bigr)^\frac1b \cos(c \ln 1) \cos(c \ln 4) + \dots \pm \Bigl( \frac{1}{1} {\cdot} \frac{1}{k} \Bigr)^\frac1b \cos(c \ln 1) \cos(c \ln k) \\ 		
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		\quad + \Bigl( \frac{1}{2} \cdot \frac{1}{3}& \Bigr)^\frac1b \cos(c \ln2) \cos(c \ln3) + \Bigl( \frac{1}{2} \cdot \frac{1}{4} \Bigr)^\frac1b \cos(c \ln 2) \cos(c \ln 4) \\ 
-		& + \Bigl( \frac{1}{2} \cdot \frac{1}{5} \Bigr)^\frac1b \cos(c \ln 2) \cos(c \ln 5) + \dots + \Bigl( \frac{1}{2} \cdot \frac{1}{k} \Bigr)^\frac1b \cos(c \ln 2) \cos(c \ln k) + \\ 		
+		\quad - \Bigl( \frac{1}{2} {\cdot} \frac{1}{3}& \Bigr)^\frac1b \cos(c \ln2) \cos(c \ln3) + \Bigl( \frac{1}{2} {\cdot} \frac{1}{4} \Bigr)^\frac1b \cos(c \ln 2) \cos(c \ln 4) \\ 
+		& - \Bigl( \frac{1}{2} {\cdot} \frac{1}{5} \Bigr)^\frac1b \cos(c \ln 2) \cos(c \ln 5) + \dots \pm \Bigl( \frac{1}{2} {\cdot} \frac{1}{k} \Bigr)^\frac1b \cos(c \ln 2) \cos(c \ln k) \\ 		
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		\quad + \Bigl( \frac{1}{3} \cdot \frac{1}{4}& \Bigr)^\frac1b \cos(c \ln3) \cos(c \ln4) + \Bigl( \frac{1}{3} \cdot \frac{1}{5} \Bigr)^\frac1b \cos(c \ln 3) \cos(c \ln 5) \\ 
-		& + \Bigl( \frac{1}{3} \cdot \frac{1}{6} \Bigr)^\frac1b \cos(c \ln 3) \cos(c \ln 6) + \dots + \Bigl( \frac{1}{3} \cdot \frac{1}{k} \Bigr)^\frac1b \cos(c \ln 3) \cos(c \ln k) + \\ 		
+		\quad - \Bigl( \frac{1}{3} {\cdot} \frac{1}{4}& \Bigr)^\frac1b \cos(c \ln3) \cos(c \ln4) + \Bigl( \frac{1}{3} {\cdot} \frac{1}{5} \Bigr)^\frac1b \cos(c \ln 3) \cos(c \ln 5) \\ 
+		& - \Bigl( \frac{1}{3} {\cdot} \frac{1}{6} \Bigr)^\frac1b \cos(c \ln 3) \cos(c \ln 6) + \dots \pm \Bigl( \frac{1}{3} {\cdot} \frac{1}{k} \Bigr)^\frac1b \cos(c \ln 3) \cos(c \ln k) + \\ 		
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		\vdots \qquad\qquad \vdots \qquad\qquad \vdots \qquad + \dots + \Bigl( \frac{1}{(k-1)k} \Bigr)^\frac1b \cos(c \ln (k-1)) \cos(c \ln k) \Biggr\}
+		\vdots \qquad\qquad \vdots \qquad\qquad \vdots \qquad + \dots - \Bigl( \frac{1}{(k-1)k} \Bigr)^\frac1b \cos(c \ln (k-1)) \cos(c \ln k) \Biggr\}
 	\end{aligned}
 	\]
 	\[\]
 	
 	\[ \begin{array}{c}
-		Y_{(b,c)}^2 = (-y_1 - y_2 - y_3 - \dots - y_k)^2 = (y_1^2 + y_2^2 + y_3^2 + \dots + y_k^2) \\
+		Y_{(b,c)}^2 = (y_1 + y_2 + y_3 + \dots + y_k)^2 = (y_1^2 + y_2^2 + y_3^2 + \dots + y_k^2) \\
 		\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\quad + 2\{(y_1y_2 + y_1y_3 + y_1y_4 + \dots + y_{1}y_{k}) \\ 
 		\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad + (y_2y_3 + y_2y_4 + y_2y_5 + \dots + y_2y_{k}) \\ 
 		\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad + (y_3y_4 + y_3y_5 + y_3y_6 + \dots + y_3y_{k}) \\ 
@@ -190,34 +200,35 @@
 	\end{array} \]
 	\[\]
 	
-		\[ = \Bigl( \frac{-\sin({c\ln 1})}{\sqrt[b]{1}} + \frac{-\sin({c\ln 2})}{\sqrt[b]{2}} + \frac{-\sin({c\ln 3})}{\sqrt[b]{3}} + \dots + \frac{-\sin({c\ln k})}{\sqrt[b]{k}} \Bigr)^2 \]
+		\[ = \Bigl( \frac{-\sin({c\ln 1})}{\sqrt[b]{1}} - \frac{-\sin({c\ln 2})}{\sqrt[b]{2}} + \frac{-\sin({c\ln 3})}{\sqrt[b]{3}} - \dots \pm \frac{-\sin({c\ln k})}{\sqrt[b]{k}} \Bigr)^2 \]
 	
 	\[ = \Bigl( \frac{1}{1} \Bigr)^{\frac2b}\sin^2({c \ln 1}) + \Bigl( \frac{1}{2} \Bigr)^{\frac2b}\sin^2({c \ln 2}) + \Bigl( \frac{1}{3} \Bigr)^{\frac2b}\sin^2({c \ln 3}) + \dots + \Bigl( \frac{1}{k} \Bigr)^{\frac2b}\sin^2({c \ln k}) \]
 	\[
 	\begin{aligned}
-		+2\Biggl\{ \Bigl( \frac{1}{1} \cdot \frac{1}{2}& \Bigr)^\frac1b \sin(c \ln1) \sin(c \ln2) + \Bigl( \frac{1}{1} \cdot \frac{1}{3} \Bigr)^\frac1b \sin(c \ln 1) \sin(c \ln 3) \\ 
-		& + \Bigl( \frac{1}{1} \cdot \frac{1}{4} \Bigr)^\frac1b \sin(c \ln 1) \sin(c \ln 4) + \dots + \Bigl( \frac{1}{1} \cdot \frac{1}{k} \Bigr)^\frac1b \sin(c \ln 1) \sin(c \ln k) + \\ 		
+		+2\Biggl\{ -\Bigl( \frac{1}{1} {\cdot} \frac{1}{2}& \Bigr)^\frac1b \sin(c \ln1) \sin(c \ln2) + \Bigl( \frac{1}{1} {\cdot} \frac{1}{3} \Bigr)^\frac1b \sin(c \ln 1) \sin(c \ln 3) \\ 
+		& - \Bigl( \frac{1}{1} {\cdot} \frac{1}{4} \Bigr)^\frac1b \sin(c \ln 1) \sin(c \ln 4) + \dots \pm \Bigl( \frac{1}{1} {\cdot} \frac{1}{k} \Bigr)^\frac1b \sin(c \ln 1) \sin(c \ln k) \\ 		
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		\quad + \Bigl( \frac{1}{2} \cdot \frac{1}{3}& \Bigr)^\frac1b \sin(c \ln2) \sin(c \ln3) + \Bigl( \frac{1}{2} \cdot \frac{1}{4} \Bigr)^\frac1b \sin(c \ln 2) \sin(c \ln 4) \\ 
-		& + \Bigl( \frac{1}{2} \cdot \frac{1}{5} \Bigr)^\frac1b \sin(c \ln 2) \sin(c \ln 5) + \dots + \Bigl( \frac{1}{2} \cdot \frac{1}{k} \Bigr)^\frac1b \sin(c \ln 2) \sin(c \ln k) + \\ 		
+		\quad - \Bigl( \frac{1}{2} {\cdot} \frac{1}{3}& \Bigr)^\frac1b \sin(c \ln2) \sin(c \ln3) + \Bigl( \frac{1}{2} {\cdot} \frac{1}{4} \Bigr)^\frac1b \sin(c \ln 2) \sin(c \ln 4) \\ 
+		& - \Bigl( \frac{1}{2} {\cdot} \frac{1}{5} \Bigr)^\frac1b \sin(c \ln 2) \sin(c \ln 5) + \dots \pm \Bigl( \frac{1}{2} {\cdot} \frac{1}{k} \Bigr)^\frac1b \sin(c \ln 2) \sin(c \ln k) \\ 		
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		\quad + \Bigl( \frac{1}{3} \cdot \frac{1}{4}& \Bigr)^\frac1b \sin(c \ln3) \sin(c \ln4) + \Bigl( \frac{1}{3} \cdot \frac{1}{5} \Bigr)^\frac1b \sin(c \ln 3) \sin(c \ln 5) \\ 
-		& + \Bigl( \frac{1}{3} \cdot \frac{1}{6} \Bigr)^\frac1b \sin(c \ln 3) \sin(c \ln 6) + \dots + \Bigl( \frac{1}{3} \cdot \frac{1}{k} \Bigr)^\frac1b \sin(c \ln 3) \sin(c \ln k) + \\ 		
+		\quad - \Bigl( \frac{1}{3} {\cdot} \frac{1}{4}& \Bigr)^\frac1b \sin(c \ln3) \sin(c \ln4) + \Bigl( \frac{1}{3} {\cdot} \frac{1}{5} \Bigr)^\frac1b \sin(c \ln 3) \sin(c \ln 5) \\ 
+		& - \Bigl( \frac{1}{3} {\cdot} \frac{1}{6} \Bigr)^\frac1b \sin(c \ln 3) \sin(c \ln 6) + \dots + \Bigl( \frac{1}{3} {\cdot} \frac{1}{k} \Bigr)^\frac1b \sin(c \ln 3) \sin(c \ln k) + \\ 		
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		\vdots \qquad\qquad \vdots \qquad\qquad \vdots \qquad + \dots + \Bigl( \frac{1}{(k-1)k} \Bigr)^\frac1b \sin(c \ln (k-1)) \sin(c \ln k) \Biggr\}
+		\vdots \qquad\qquad \vdots \qquad\qquad \vdots \qquad + \dots - \Bigl( \frac{1}{(k-1)k} \Bigr)^\frac1b \sin(c \ln (k-1)) \sin(c \ln k) \Biggr\}
 	\end{aligned}
 	\]
-	Despite the fact that $X_{(b,c)}$ and $Y_{(b,c)}$ diverge, the two Cauchy products, namely $X_{(b,c)}^2$ and $Y_{(b,c)}^2$ need further scrutiny in order to determine their individual divergence. What is clear is that $X_{(b,c)}^2 \neq 0$ and $Y_{(b,c)}^2 \neq 0$ are not guaranteed.
+	Despite the fact that $X_{(b,c)}$ and $Y_{(b,c)}$ diverge, the two Cauchy products, $X_{(b,c)}^2$ and $Y_{(b,c)}^2$ need further scrutiny in order to determine their individual divergence. What is clear is that $X_{(b,c)}^2 \neq 0$ and $Y_{(b,c)}^2 \neq 0$ are not guaranteed.
 	\[\]
+	
 	Keeping in mind that $X_{(b,c)}^2 + Y_{(b,c)}^2 = 0$ or $X_{(b,c)}^2 + Y_{(b,c)}^2$ converges to zero, let the series of cosine cross terms in $X_{(b,c)}^2$ be $\alpha_{(b,c)}$ and that of sine cross terms in $Y_{(b,c)}^2$ be $\beta_{(b,c)}$.
 	
 	\[
@@ -259,184 +270,192 @@
 	
 	\[ \zeta(\frac{2}{b}) = -2(\alpha_{(b,c)} + \beta_{(b,c)}) \]
 	
-	\subsection{Divergence of $\alpha + \beta$}
-	In order to study the nature of $\alpha + \beta$, it should be rearranged in a format that gives us better insight.
+	\subsection{Divergence of $\alpha_{(b,c)} + \beta_{(b,c)}$}
+	In order to study the nature of $\alpha_{(b,c)} + \beta_{(b,c)}$, it should be rearranged in a format that gives us better insight.
 	
-	\[ \alpha_{(b,c)} + \beta_{(b,c)} = \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad (k \to \infty) \]
+	\[ \alpha_{(b,c)} + \beta_{(b,c)} = \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad (k \to \infty) \]
 	\[
 	\begin{aligned}
-		& \Bigl( \frac{1}{1} \cdot \frac{1}{2} \Bigr)^\frac1b \cos(c \ln1) \cos(c \ln2) + \Bigl( \frac{1}{1} \cdot \frac{1}{3} \Bigr)^\frac1b \cos(c \ln 1) \cos(c \ln 3) + \\
-		& \Bigl( \frac{1}{1} \cdot \frac{1}{2} \Bigr)^\frac1b \sin(c \ln1) \sin(c \ln2) + \Bigl( \frac{1}{1} \cdot \frac{1}{3} \Bigr)^\frac1b \sin(c \ln 1) \sin(c \ln 3) + 
+		& -\Bigl( \frac{1}{1} \cdot \frac{1}{2} \Bigr)^\frac1b \cos(c \ln1) \cos(c \ln2) + \Bigl( \frac{1}{1} \cdot \frac{1}{3} \Bigr)^\frac1b \cos(c \ln 1) \cos(c \ln 3) \\
+		& -\Bigl( \frac{1}{1} \cdot \frac{1}{2} \Bigr)^\frac1b \sin(c \ln1) \sin(c \ln2) + \Bigl( \frac{1}{1} \cdot \frac{1}{3} \Bigr)^\frac1b \sin(c \ln 1) \sin(c \ln 3) 
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		\qquad\qquad\quad & \Bigl( \frac{1}{1} \cdot \frac{1}{4} \Bigr)^\frac1b \cos(c \ln 1) \cos(c \ln 4) + \dots + \Bigl( \frac{1}{1} \cdot \frac{1}{k} \Bigr)^\frac1b \cos(c \ln 1) \cos(c \ln k) + \\
-		& \Bigl( \frac{1}{1} \cdot \frac{1}{4} \Bigr)^\frac1b \sin(c \ln 1) \sin(c \ln 4) + \dots + \Bigl( \frac{1}{1} \cdot \frac{1}{k} \Bigr)^\frac1b \sin(c \ln 1) \sin(c \ln k) +
+		\qquad\qquad\quad & -\Bigl( \frac{1}{1} \cdot \frac{1}{4} \Bigr)^\frac1b \cos(c \ln 1) \cos(c \ln 4) + \dots \pm \Bigl( \frac{1}{1} \cdot \frac{1}{k} \Bigr)^\frac1b \cos(c \ln 1) \cos(c \ln k) \\
+		& -\Bigl( \frac{1}{1} \cdot \frac{1}{4} \Bigr)^\frac1b \sin(c \ln 1) \sin(c \ln 4) + \dots \pm \Bigl( \frac{1}{1} \cdot \frac{1}{k} \Bigr)^\frac1b \sin(c \ln 1) \sin(c \ln k)
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		& \Bigl( \frac{1}{2} \cdot \frac{1}{3} \Bigr)^\frac1b \cos(c \ln2) \cos(c \ln3) + \Bigl( \frac{1}{2} \cdot \frac{1}{4} \Bigr)^\frac1b \cos(c \ln 2) \cos(c \ln 4) + \\
-		& \Bigl( \frac{1}{2} \cdot \frac{1}{3} \Bigr)^\frac1b \sin(c \ln2) \sin(c \ln3) + \Bigl( \frac{1}{2} \cdot \frac{1}{4} \Bigr)^\frac1b \sin(c \ln 2) \sin(c \ln 4) + 
+		& -\Bigl( \frac{1}{2} \cdot \frac{1}{3} \Bigr)^\frac1b \cos(c \ln2) \cos(c \ln3) + \Bigl( \frac{1}{2} \cdot \frac{1}{4} \Bigr)^\frac1b \cos(c \ln 2) \cos(c \ln 4) \\
+		& -\Bigl( \frac{1}{2} \cdot \frac{1}{3} \Bigr)^\frac1b \sin(c \ln2) \sin(c \ln3) + \Bigl( \frac{1}{2} \cdot \frac{1}{4} \Bigr)^\frac1b \sin(c \ln 2) \sin(c \ln 4) 
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		\qquad\qquad\quad & \Bigl( \frac{1}{2} \cdot \frac{1}{5} \Bigr)^\frac1b \cos(c \ln 2) \cos(c \ln 5) + \dots + \Bigl( \frac{1}{2} \cdot \frac{1}{k} \Bigr)^\frac1b \cos(c \ln 2) \cos(c \ln k) + \\
-		& \Bigl( \frac{1}{2} \cdot \frac{1}{5} \Bigr)^\frac1b \sin(c \ln 2) \sin(c \ln 5) + \dots + \Bigl( \frac{1}{2} \cdot \frac{1}{k} \Bigr)^\frac1b \sin(c \ln 2) \sin(c \ln k) +
+		\qquad\qquad\quad & -\Bigl( \frac{1}{2} \cdot \frac{1}{5} \Bigr)^\frac1b \cos(c \ln 2) \cos(c \ln 5) + \dots \pm \Bigl( \frac{1}{2} \cdot \frac{1}{k} \Bigr)^\frac1b \cos(c \ln 2) \cos(c \ln k) \\
+		& -\Bigl( \frac{1}{2} \cdot \frac{1}{5} \Bigr)^\frac1b \sin(c \ln 2) \sin(c \ln 5) + \dots \pm \Bigl( \frac{1}{2} \cdot \frac{1}{k} \Bigr)^\frac1b \sin(c \ln 2) \sin(c \ln k)
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		& \Bigl( \frac{1}{3} \cdot \frac{1}{4} \Bigr)^\frac1b \cos(c \ln3) \cos(c \ln4) + \Bigl( \frac{1}{3} \cdot \frac{1}{5} \Bigr)^\frac1b \cos(c \ln 3) \cos(c \ln 5) + \\
-		& \Bigl( \frac{1}{3} \cdot \frac{1}{4} \Bigr)^\frac1b \sin(c \ln3) \sin(c \ln4) + \Bigl( \frac{1}{3} \cdot \frac{1}{5} \Bigr)^\frac1b \sin(c \ln 3) \sin(c \ln 5) + 
+		& -\Bigl( \frac{1}{3} \cdot \frac{1}{4} \Bigr)^\frac1b \cos(c \ln3) \cos(c \ln4) + \Bigl( \frac{1}{3} \cdot \frac{1}{5} \Bigr)^\frac1b \cos(c \ln 3) \cos(c \ln 5) \\
+		& -\Bigl( \frac{1}{3} \cdot \frac{1}{4} \Bigr)^\frac1b \sin(c \ln3) \sin(c \ln4) + \Bigl( \frac{1}{3} \cdot \frac{1}{5} \Bigr)^\frac1b \sin(c \ln 3) \sin(c \ln 5)
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		\qquad\qquad\quad & \Bigl( \frac{1}{3} \cdot \frac{1}{6} \Bigr)^\frac1b \cos(c \ln 3) \cos(c \ln 6) + \dots + \Bigl( \frac{1}{3} \cdot \frac{1}{k} \Bigr)^\frac1b \cos(c \ln 3) \cos(c \ln k) + \\
-		& \Bigl( \frac{1}{3} \cdot \frac{1}{6} \Bigr)^\frac1b \sin(c \ln 3) \sin(c \ln 6) + \dots + \Bigl( \frac{1}{3} \cdot \frac{1}{k} \Bigr)^\frac1b \sin(c \ln 3) \sin(c \ln k) +
+		\qquad\qquad\quad & -\Bigl( \frac{1}{3} \cdot \frac{1}{6} \Bigr)^\frac1b \cos(c \ln 3) \cos(c \ln 6) + \dots \pm \Bigl( \frac{1}{3} \cdot \frac{1}{k} \Bigr)^\frac1b \cos(c \ln 3) \cos(c \ln k) + \\
+		& -\Bigl( \frac{1}{3} \cdot \frac{1}{6} \Bigr)^\frac1b \sin(c \ln 3) \sin(c \ln 6) + \dots \pm \Bigl( \frac{1}{3} \cdot \frac{1}{k} \Bigr)^\frac1b \sin(c \ln 3) \sin(c \ln k) +
 	\end{aligned}
 	\]
 	
-	\[ \qquad\qquad \dots \qquad + \Bigl( \frac{1}{(k-1)k} \Bigr)^\frac1b \cos(c \ln (k-1)) \cos(c \ln k) \]
-	\[ \qquad\qquad \dots \qquad + \Bigl( \frac{1}{(k-1)k} \Bigr)^\frac1b \sin(c \ln (k-1)) \sin(c \ln k) \]
+	\[ \qquad\qquad \dots \qquad - \Bigl( \frac{1}{(k-1)k} \Bigr)^\frac1b \cos(c \ln (k-1)) \cos(c \ln k) \]
+	\[ \qquad\qquad \dots \qquad - \Bigl( \frac{1}{(k-1)k} \Bigr)^\frac1b \sin(c \ln (k-1)) \sin(c \ln k) \]
 	
 	\[\]
 	By initial grouping, we can have similar cosine and sine terms together.
 	\[
 	\begin{aligned}
-		= \quad & \Bigl( \frac{1}{1} \cdot \frac{1}{2} \Bigr)^\frac1b \Bigl( \cos(c \ln1) \cos(c \ln2) + \sin(c \ln1) \sin(c \ln2) \Bigr) + \\
-		& \qquad \Bigl( \frac{1}{1} \cdot \frac{1}{3} \Bigr)^\frac1b \Bigl( \cos(c \ln1) \cos(c \ln3) + \sin(c \ln1) \sin(c \ln3) \Bigr) + \\
-		& \qquad \Bigl( \frac{1}{1} \cdot \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln1) \cos(c \ln4) + \sin(c \ln1) \sin(c \ln4) \Bigr) + \\
-		& \qquad \dots  + \Bigl( \frac{1}{1} \cdot \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln1) \cos(c \ln k) + \sin(c \ln1) \sin(c \ln k) \Bigr) + 
+		= \quad & -\Bigl( \frac{1}{1} \cdot \frac{1}{2} \Bigr)^\frac1b \Bigl( \cos(c \ln1) \cos(c \ln2) + \sin(c \ln1) \sin(c \ln2) \Bigr) \\
+		& \qquad +\Bigl( \frac{1}{1} \cdot \frac{1}{3} \Bigr)^\frac1b \Bigl( \cos(c \ln1) \cos(c \ln3) + \sin(c \ln1) \sin(c \ln3) \Bigr) \\
+		& \qquad -\Bigl( \frac{1}{1} \cdot \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln1) \cos(c \ln4) + \sin(c \ln1) \sin(c \ln4) \Bigr) \\
+		& \qquad \dots  \pm \Bigl( \frac{1}{1} \cdot \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln1) \cos(c \ln k) + \sin(c \ln1) \sin(c \ln k) \Bigr)
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		\quad & \Bigl( \frac{1}{2} \cdot \frac{1}{3} \Bigr)^\frac1b \Bigl( \cos(c \ln2) \cos(c \ln3) + \sin(c \ln2) \sin(c \ln3) \Bigr) + \\
-		& \qquad \Bigl( \frac{1}{2} \cdot \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln2) \cos(c \ln4) + \sin(c \ln2) \sin(c \ln4) \Bigr) + \\
-		& \qquad \Bigl( \frac{1}{2} \cdot \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln2) \cos(c \ln5) + \sin(c \ln2) \sin(c \ln5) \Bigr) + \\
-		& \qquad \dots  + \Bigl( \frac{1}{2} \cdot \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln2) \cos(c \ln k) + \sin(c \ln2) \sin(c \ln k) \Bigr) + 
+		\quad & -\Bigl( \frac{1}{2} \cdot \frac{1}{3} \Bigr)^\frac1b \Bigl( \cos(c \ln2) \cos(c \ln3) + \sin(c \ln2) \sin(c \ln3) \Bigr) \\
+		& \qquad +\Bigl( \frac{1}{2} \cdot \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln2) \cos(c \ln4) + \sin(c \ln2) \sin(c \ln4) \Bigr) \\
+		& \qquad -\Bigl( \frac{1}{2} \cdot \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln2) \cos(c \ln5) + \sin(c \ln2) \sin(c \ln5) \Bigr) \\
+		& \qquad \dots  \pm \Bigl( \frac{1}{2} \cdot \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln2) \cos(c \ln k) + \sin(c \ln2) \sin(c \ln k) \Bigr) 
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		\quad & \Bigl( \frac{1}{3} \cdot \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln3) \cos(c \ln4) + \sin(c \ln3) \sin(c \ln4) \Bigr) + \\
-		& \qquad \Bigl( \frac{1}{3} \cdot \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln3) \cos(c \ln5) + \sin(c \ln3) \sin(c \ln5) \Bigr) + \\
-		& \qquad \Bigl( \frac{1}{3} \cdot \frac{1}{6} \Bigr)^\frac1b \Bigl( \cos(c \ln3) \cos(c \ln6) + \sin(c \ln3) \sin(c \ln6) \Bigr) + \\
-		& \qquad \dots  + \Bigl( \frac{1}{3} \cdot \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln3) \cos(c \ln k) + \sin(c \ln3) \sin(c \ln k) \Bigr) + 
+		\quad & -\Bigl( \frac{1}{3} \cdot \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln3) \cos(c \ln4) + \sin(c \ln3) \sin(c \ln4) \Bigr) \\
+		& \qquad +\Bigl( \frac{1}{3} \cdot \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln3) \cos(c \ln5) + \sin(c \ln3) \sin(c \ln5) \Bigr) \\
+		& \qquad -\Bigl( \frac{1}{3} \cdot \frac{1}{6} \Bigr)^\frac1b \Bigl( \cos(c \ln3) \cos(c \ln6) + \sin(c \ln3) \sin(c \ln6) \Bigr) \\
+		& \qquad \dots  \pm \Bigl( \frac{1}{3} \cdot \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln3) \cos(c \ln k) + \sin(c \ln3) \sin(c \ln k) \Bigr) + 
 	\end{aligned}
 	\]
-	\[ \qquad\qquad \dots + \Bigl( \frac{1}{(k-1)k} \Bigr)^\frac1b \Bigl( \cos(c \ln (k-1)) \cos(c \ln k) + \sin(c \ln (k-1)) \sin(c \ln k) \Bigr) \]
+	\[ \qquad\qquad \dots - \Bigl( \frac{1}{(k-1)k} \Bigr)^\frac1b \Bigl( \cos(c \ln (k-1)) \cos(c \ln k) + \sin(c \ln (k-1)) \sin(c \ln k) \Bigr) \]
 	
 	\[\]
-	Then we may utilise that fact that $ \cos{A} \cdot \cos{B} = \cos{(A-B)} - \sin{A}\sin{B} $ to cancel out all the sine terms.
+	Then we may utilise the fact that $ \cos{A} \cdot \cos{B} = \cos{(A-B)} - \sin{A}\sin{B} $ to cancel out all the sine terms.
 	
 	\[
 	\begin{aligned}
-		= \quad & \Bigl( \frac{1}{1} \cdot \frac{1}{2} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln 2) - \sin(c \ln1) \sin(c \ln2) + \sin(c \ln1) \sin(c \ln2) \Bigr) + \\
-		& \qquad \Bigl( \frac{1}{1} \cdot \frac{1}{3} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln3) - \sin(c \ln1) \sin(c \ln3) + \sin(c \ln1) \sin(c \ln3) \Bigr) + \\
-		& \qquad \Bigl( \frac{1}{1} \cdot \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln4) - \sin(c \ln1) \sin(c \ln4) + \sin(c \ln1) \sin(c \ln4) \Bigr) + \\
-		& \dots  + \Bigl( \frac{1}{1} \cdot \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln k) - \sin(c \ln1) \sin(c \ln k) + \sin(c \ln1) \sin(c \ln k) \Bigr) + 
-	\end{aligned}
-	\]
-	
-	\[
-	\begin{aligned}
-		\quad & \Bigl( \frac{1}{2} \cdot \frac{1}{3} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln3) - \sin(c \ln2) \sin(c \ln3) + \sin(c \ln2) \sin(c \ln3) \Bigr) + \\
-		& \qquad \Bigl( \frac{1}{2} \cdot \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln4) - \sin(c \ln2) \sin(c \ln4) + \sin(c \ln2) \sin(c \ln4) \Bigr) + \\
-		& \qquad \Bigl( \frac{1}{2} \cdot \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln5) - \sin(c \ln2) \sin(c \ln5) + \sin(c \ln2) \sin(c \ln5) \Bigr) + \\
-		& \dots  + \Bigl( \frac{1}{2} \cdot \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln k) - \sin(c \ln2) \sin(c \ln k) + \sin(c \ln2) \sin(c \ln k) \Bigr) + 
+		= \quad & -\Bigl( \frac{1}{1} \cdot \frac{1}{2} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln 2) - \sin(c \ln1) \sin(c \ln2) + \sin(c \ln1) \sin(c \ln2) \Bigr) \\
+		& \qquad +\Bigl( \frac{1}{1} \cdot \frac{1}{3} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln3) - \sin(c \ln1) \sin(c \ln3) + \sin(c \ln1) \sin(c \ln3) \Bigr) \\
+		& \qquad -\Bigl( \frac{1}{1} \cdot \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln4) - \sin(c \ln1) \sin(c \ln4) + \sin(c \ln1) \sin(c \ln4) \Bigr) \\
+		& \dots  \pm \Bigl( \frac{1}{1} \cdot \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln k) - \sin(c \ln1) \sin(c \ln k) + \sin(c \ln1) \sin(c \ln k) \Bigr)
 	\end{aligned}
 	\]
 	
 	\[
 	\begin{aligned}
-		\quad & \Bigl( \frac{1}{3} \cdot \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln4) - \sin(c \ln3) \sin(c \ln4) + \sin(c \ln3) \sin(c \ln4) \Bigr) + \\
-		& \qquad \Bigl( \frac{1}{3} \cdot \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln5) - \sin(c \ln3) \sin(c \ln5) + \sin(c \ln3) \sin(c \ln5) \Bigr) + \\
-		& \qquad \Bigl( \frac{1}{3} \cdot \frac{1}{6} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln6) - \sin(c \ln3) \sin(c \ln6) + \sin(c \ln3) \sin(c \ln6) \Bigr) + \\
-		& \dots  + \Bigl( \frac{1}{3} \cdot \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln k) - \sin(c \ln3) \sin(c \ln k) + \sin(c \ln3) \sin(c \ln k) \Bigr) + 
+		\quad & -\Bigl( \frac{1}{2} \cdot \frac{1}{3} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln3) - \sin(c \ln2) \sin(c \ln3) + \sin(c \ln2) \sin(c \ln3) \Bigr) \\
+		& \qquad +\Bigl( \frac{1}{2} \cdot \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln4) - \sin(c \ln2) \sin(c \ln4) + \sin(c \ln2) \sin(c \ln4) \Bigr) \\
+		& \qquad -\Bigl( \frac{1}{2} \cdot \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln5) - \sin(c \ln2) \sin(c \ln5) + \sin(c \ln2) \sin(c \ln5) \Bigr) \\
+		& \dots  \pm \Bigl( \frac{1}{2} \cdot \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln k) - \sin(c \ln2) \sin(c \ln k) + \sin(c \ln2) \sin(c \ln k) \Bigr) 
 	\end{aligned}
 	\]
-	\[ \dots + \Bigl( \frac{1}{(k-1)k} \Bigr)^\frac1b \Bigl( \cos(c \ln (k-1) - c \ln k) - \sin(c \ln (k-1)) \sin(c \ln k) + \sin(c \ln (k-1)) \sin(c \ln k) \Bigr) \]
+	
+	\[
+	\begin{aligned}
+		\quad & -\Bigl( \frac{1}{3} \cdot \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln4) - \sin(c \ln3) \sin(c \ln4) + \sin(c \ln3) \sin(c \ln4) \Bigr) \\
+		& \qquad +\Bigl( \frac{1}{3} \cdot \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln5) - \sin(c \ln3) \sin(c \ln5) + \sin(c \ln3) \sin(c \ln5) \Bigr) \\
+		& \qquad -\Bigl( \frac{1}{3} \cdot \frac{1}{6} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln6) - \sin(c \ln3) \sin(c \ln6) + \sin(c \ln3) \sin(c \ln6) \Bigr) \\
+		& \dots \pm \Bigl( \frac{1}{3} \cdot \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln k) - \sin(c \ln3) \sin(c \ln k) + \sin(c \ln3) \sin(c \ln k) \Bigr) + 
+	\end{aligned}
+	\]
+	\[ \dots - \Bigl( \frac{1}{(k-1)k} \Bigr)^\frac1b \Bigl( \cos(c \ln (k-1) - c \ln k) - \sin(c \ln (k-1)) \sin(c \ln k) + \sin(c \ln (k-1)) \sin(c \ln k) \Bigr) \]
 	
 	
 	\[
 	\begin{aligned}
-		= \quad & \Bigl( \frac{1}{1} \cdot \frac{1}{2} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln 2) \Bigr) + \Bigl( \frac{1}{1} \cdot \frac{1}{3} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln3) \Bigr) + \\
-		& \qquad \Bigl( \frac{1}{1} \cdot \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln4) \Bigr) + \dots  + \Bigl( \frac{1}{1} \cdot \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln k) \Bigr) + 
+		= \quad & -\Bigl( \frac{1}{1} \cdot \frac{1}{2} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln 2) \Bigr) + \Bigl( \frac{1}{1} \cdot \frac{1}{3} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln3) \Bigr) \\
+		& \qquad -\Bigl( \frac{1}{1} \cdot \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln4) \Bigr) + \dots \pm \Bigl( \frac{1}{1} \cdot \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln k) \Bigr) 
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		\quad\quad & \Bigl( \frac{1}{2} \cdot \frac{1}{3} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln3) \Bigr) + \Bigl( \frac{1}{2} \cdot \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln4) \Bigr) + \\
-		& \qquad \Bigl( \frac{1}{2} \cdot \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln5) \Bigr) + \dots  + \Bigl( \frac{1}{2} \cdot \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln k) \Bigr) + 
+		\quad\quad & -\Bigl( \frac{1}{2} \cdot \frac{1}{3} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln3) \Bigr) + \Bigl( \frac{1}{2} \cdot \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln4) \Bigr) \\
+		& \qquad -\Bigl( \frac{1}{2} \cdot \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln5) \Bigr) + \dots \pm \Bigl( \frac{1}{2} \cdot \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln k) \Bigr)
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		\quad\quad & \Bigl( \frac{1}{3} \cdot \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln4) \Bigr) + \Bigl( \frac{1}{3} \cdot \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln5) \Bigr) + \\
-		& \qquad \Bigl( \frac{1}{3} \cdot \frac{1}{6} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln6) \Bigr) + \dots  + \Bigl( \frac{1}{3} \cdot \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln k) \Bigr) + 
+		\quad\quad & -\Bigl( \frac{1}{3} \cdot \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln4) \Bigr) + \Bigl( \frac{1}{3} \cdot \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln5) \Bigr)\\
+		& \qquad -\Bigl( \frac{1}{3} \cdot \frac{1}{6} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln6) \Bigr) + \dots  \pm \Bigl( \frac{1}{3} \cdot \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln k) \Bigr) +
 	\end{aligned}
 	\]
-	\[ \dots + \Bigl( \frac{1}{(k-1)k} \Bigr)^\frac1b \Bigl( \cos(c \ln (k-1) - c \ln k) \Bigr) \]
+	\[ \dots - \Bigl( \frac{1}{(k-1)k} \Bigr)^\frac1b \Bigl( \cos(c \ln (k-1) - c \ln k) \Bigr) \]
 	
-	Common terms of each group can be factored out.
+	Common terms of each group can then be factored out.
 	\[
 	\begin{aligned}
-		= \quad & \Bigl( \frac{1}{1} \Bigr)^\frac1b \Biggl\{ \Bigl( \frac{1}{2} \Bigr)^\frac1b \cos(c \ln1 - c \ln 2) \Bigr) + \Bigl( \frac{1}{3} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln3) \Bigr) + \\
-		& \qquad \Bigl( \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln4) \Bigr) + \dots  + \Bigl( \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln k) \Bigr) \Biggr\} + 
+		= \quad & \Bigl( \frac{1}{1} \Bigr)^\frac1b \Biggl\{ -\Bigl( \frac{1}{2} \Bigr)^\frac1b \cos(c \ln1 - c \ln 2) \Bigr) + \Bigl( \frac{1}{3} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln3) \Bigr) \\
+		& \qquad -\Bigl( \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln4) \Bigr) + \dots  \pm \Bigl( \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln1 - c \ln k) \Bigr) \Biggr\}
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		\quad\quad & \Bigl( \frac{1}{2}  \Bigr)^\frac1b \Biggl\{ \Bigl( \frac{1}{3} \Bigr)^\frac1b \cos(c \ln2 - c \ln3) \Bigr) + \Bigl( \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln4) \Bigr) + \\
-		& \qquad \Bigl( \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln5) \Bigr) + \dots  + \Bigl( \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln k) \Bigr) \Biggr\} + 
+		\quad\quad & +\Bigl( \frac{1}{2}  \Bigr)^\frac1b \Biggl\{ -\Bigl( \frac{1}{3} \Bigr)^\frac1b \cos(c \ln2 - c \ln3) \Bigr) + \Bigl( \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln4) \Bigr) \\
+		& \qquad -\Bigl( \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln5) \Bigr) + \dots \pm \Bigl( \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln2 - c \ln k) \Bigr) \Biggr\} 
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		\quad\quad & \Bigl( \frac{1}{3} \Bigr)^\frac1b \Biggl\{ \Bigl( \frac{1}{4} \Bigr)^\frac1b \cos(c \ln3 - c \ln4) \Bigr) + \Bigl( \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln5) \Bigr) + \\
-		& \qquad \Bigl( \frac{1}{6} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln6) \Bigr) + \dots  + \Bigl( \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln k) \Bigr) \Biggr\} + 
+		\quad\quad & +\Bigl( \frac{1}{3} \Bigr)^\frac1b \Biggl\{ -\Bigl( \frac{1}{4} \Bigr)^\frac1b \cos(c \ln3 - c \ln4) \Bigr) + \Bigl( \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln5) \Bigr) \\
+		& \qquad -\Bigl( \frac{1}{6} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln6) \Bigr) + \dots \pm \Bigl( \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln3 - c \ln k) \Bigr) \Biggr\} + 
 	\end{aligned}
 	\]
-	\[ \dots + \Bigl( \frac{1}{k-1} \Bigr)^\frac1b \Biggl\{ \Bigl( \frac{1}{k} \Bigr)^\frac1b \cos(c \ln (k-1) - c \ln k) \Biggr\} \]
+	\[ \dots + \Bigl( \frac{1}{k-1} \Bigr)^\frac1b \Biggl\{ -\Bigl( \frac{1}{k} \Bigr)^\frac1b \cos(c \ln (k-1) - c \ln k) \Biggr\} \]
 	
 	
 	Finally, the logarithm trick where $ \ln{A} - \ln{B} = \ln{\frac{A}{B}} $ will merge all the c$\ln k$ wherever possible.
 	
 	\[
 	\begin{aligned}
-		= \quad \Bigl( \frac{1}{1} \Bigr)^\frac1b \Biggl\{ \Bigl( \frac{1}{2} \Bigr)^\frac1b &\cos(c \ln \frac{1}{2}) \Bigr) + \Bigl( \frac{1}{3} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{1}{3}) \Bigr) + \\
-		& \Bigl( \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{1}{4}) \Bigr) + \dots  + \Bigl( \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{1}{k}) \Bigr) \Biggr\} + 
+		= \quad \Bigl( \frac{1}{1} \Bigr)^\frac1b \Biggl\{ -\Bigl( \frac{1}{2} \Bigr)^\frac1b &\cos(c \ln \frac{1}{2}) \Bigr) + \Bigl( \frac{1}{3} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{1}{3}) \Bigr) \\
+		& -\Bigl( \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{1}{4}) \Bigr) + \dots \pm \Bigl( \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{1}{k}) \Bigr) \Biggr\} 
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		\quad\quad \Bigl( \frac{1}{2}  \Bigr)^\frac1b \Biggl\{ \Bigl( \frac{1}{3} \Bigr)^\frac1b &\cos(c \ln \frac{2}{3}) \Bigr) + \Bigl( \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{2}{4}) \Bigr) + \\
-		& \Bigl( \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{2}{5}) \Bigr) + \dots  + \Bigl( \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{2}{k}) \Bigr) \Biggr\} + 
+		\quad\quad +\Bigl( \frac{1}{2} \Bigr)^\frac1b \Biggl\{ -\Bigl( \frac{1}{3} \Bigr)^\frac1b &\cos(c \ln \frac{2}{3}) \Bigr) + \Bigl( \frac{1}{4} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{2}{4}) \Bigr) \\
+		& -\Bigl( \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{2}{5}) \Bigr) + \dots \pm \Bigl( \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{2}{k}) \Bigr) \Biggr\}
 	\end{aligned}
 	\]
 	\[
 	\begin{aligned}
-		\quad\quad \Bigl( \frac{1}{3} \Bigr)^\frac1b \Biggl\{ \Bigl( \frac{1}{4} \Bigr)^\frac1b &\cos(c \ln \frac{3}{4}) \Bigr) + \Bigl( \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{3}{5}) \Bigr) + \\
-		& \Bigl( \frac{1}{6} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{3}{6}) \Bigr) + \dots  + \Bigl( \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{3}{k}) \Bigr) \Biggr\} + 
+		\quad\quad +\Bigl( \frac{1}{3} \Bigr)^\frac1b \Biggl\{ -\Bigl( \frac{1}{4} \Bigr)^\frac1b &\cos(c \ln \frac{3}{4}) \Bigr) + \Bigl( \frac{1}{5} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{3}{5}) \Bigr) \\
+		& -\Bigl( \frac{1}{6} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{3}{6}) \Bigr) + \dots \pm \Bigl( \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{3}{k}) \Bigr) \Biggr\} + 
 	\end{aligned}
 	\]
-	\[ \dots + \Bigl( \frac{1}{k-1} \Bigr)^\frac1b \Biggl\{ \Bigl( \frac{1}{k} \Bigr)^\frac1b \cos(c \ln \frac{k-1}{k}) \Biggr\} \]
-	
-	
-	
+	\[
+	\begin{aligned}
+		\quad\quad +\Bigl( \frac{1}{4} \Bigr)^\frac1b \Biggl\{ -\Bigl( \frac{1}{5} \Bigr)^\frac1b &\cos(c \ln \frac{4}{5}) \Bigr) + \Bigl( \frac{1}{6} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{4}{6}) \Bigr) \\
+		& -\Bigl( \frac{1}{7} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{4}{7}) \Bigr) + \dots \pm \Bigl( \frac{1}{k} \Bigr)^\frac1b \Bigl( \cos(c \ln \frac{4}{k}) \Bigr) \Biggr\} + 
+	\end{aligned}
+	\]
+	\[ \dots + \Bigl( \frac{1}{k-1} \Bigr)^\frac1b \Biggl\{ -\Bigl( \frac{1}{k} \Bigr)^\frac1b \cos(c \ln \frac{k-1}{k}) \Biggr\} \]
 	
 	\[\]
-	The coefficients grouping all their respective cosine terms resemble the sequence from $\zeta(\frac{1}{b})$ and given that $0<\frac{1}{b}=\Re(s)<1$, this series does not converge. The denominators of inner cosine terms also are of the same pattern as they are different subseries of $\zeta(s)$ while the numerators are cosine values that change constantly. These do not converge as they all oscillate at an increasingly slower rate as $k$ tends to infinity. Therefore $\alpha_{(b,c)} + \beta_{(b,c)}$ diverges as neither the outer coefficients nor the inner groups converge.
 	
-	If $\alpha_{(b,c)} + \beta_{(b,c)}$ diverges, then so does $-2(\alpha_{(b,c)} + \beta_{(b,c)})$. This means that $\zeta(\frac{2}{b})$ diverges as well as $\zeta(\frac{2}{b}) = -2(\alpha_{(b,c)} + \beta_{(b,c)})$. As $\zeta(1)$ is the only instance where this occurs, $\frac{2}{b} = 1$ or $b=2$.
+	The reorganised $\alpha_{(b,c)} + \beta_{(b,c)}$ can be viewed as a collection of nodes and branches where each node is the outer coefficient in the form of $\frac{1}{k}^{\frac{1}{b}}$ and each branch is a series of cosine terms with their own inner coefficients. The inner coefficients only affect individual cosine terms and are all subsequences from $\eta(s)$ with the group polarity switching as each branch ends. The cosine values, acting as the numerators, are bound from -1 to 1 albeit with an increasingly slower speed of oscillation due to the natural logarithms as $k \to \infty$. However, the fact that these subsequences either follow an $\eta(s)$ or a $-\eta(s)$ pattern causes each branch to converge.
 	
-	\[ \therefore \sigma = \frac{1}{b} = \frac{1}{2} \]
+	The nodes grouping all their respective cosine terms resemble the sequence from $\zeta(\frac{1}{b})$ and given $0<\Re(s)<1$, this series does not converge. This does not allow $\alpha_{(b,c)} + \beta_{(b,c)}$ to converge as $\frac{1}{b}$ is not defined to be bigger than 1. Therefore, given all the conditions, $\alpha_{(b,c)} + \beta_{(b,c)}$ diverges.
+	
+	If $\alpha_{(b,c)} + \beta_{(b,c)}$ diverges, $m(\alpha_{(b,c)} + \beta_{(b,c)})$ diverges where $m \in \mathbb{R}$. This means that $\zeta(\frac{2}{b})$ diverges as $\zeta(\frac{2}{b}) = -2(\alpha_{(b,c)} + \beta_{(b,c)})$. As $\zeta(1)$ is the only instance where this occurs, $\frac{2}{b} = 1$ or $b=2$. Additionally, the relationship between $\zeta(\frac{2}{b})$ and $\alpha_{(b,c)} + \beta_{(b,c)}$ means that, for any non-trivial zero $s$, the sum of all cosine cross terms and sine cross terms from $X^2$ and $Y^2$, multiplied by $-2$, becomes the harmonic series.
+	
+	
+	\[ \therefore \sigma = \frac{1}{b} = \frac{1}{2} \, , \qquad -2(\alpha + \beta) = 1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\frac{1}{5}+\frac{1}{6}+... \]
 	$\Rightarrow$ The real part of s where the Riemann zeta function converges to a non-trivial zero is always $\frac{1}{2}$.
+	
 	
 	
 	
